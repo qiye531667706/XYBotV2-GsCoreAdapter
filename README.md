@@ -7,9 +7,13 @@ https://github.com/HenryXiaoYang/XYBotV2
 早柚核心官方地址：
 https://github.com/KimigaiiWuyi/GenshinUID
 
+
+
 使用教程
 更改config.toml中的早柚核心地址后加载插件
 然后管理员在需要使用本插件的群里发送 开启早柚 即可使用
 使用方式 早柚[空格]早柚命令 
 举例:
 早柚 gs帮助
+
+成品展示、早柚配置抓包等后续会发教程 等待更新吧
