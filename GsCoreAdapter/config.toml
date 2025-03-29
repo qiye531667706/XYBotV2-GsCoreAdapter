@@ -1,0 +1,4 @@
+	[GsCoreAdapter]
+	enable = true
+	gscore_url = "ws://你的早柚核心地址:8765/ws/XYBotV2" 
+
