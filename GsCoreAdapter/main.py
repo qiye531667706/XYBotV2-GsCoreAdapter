@@ -45,22 +45,6 @@ class MessageReceive:
             'content': self.content
         }
 
-#    def __repr__(self):
-#        # 创建一个字典，存放所有相关字段
-#        result = {
-#            "bot_id": self.bot_id,
-#            "sender": repr(self.sender),
-#            "bot_self_id": self.bot_self_id,
-#            "msg_id": self.msg_id,
-#            "user_type": self.user_type,
-#            "group_id": self.group_id,
-#            "user_id": self.user_id,
-#            "user_pm": self.user_pm,
-#            "content": repr(self.content),
-#        }
-#        # 使用 json.dumps() 将字典转换为格式化的 JSON 字符串
-#        return json.dumps(result, ensure_ascii=False, indent=4).replace('\\"', '"').replace('\"{', '{').replace('}\"', '}').replace('\"[', '[').replace(']\"', ']')
-
         
 class Message:
     def __init__(self, message: str):
@@ -73,12 +57,6 @@ class Message:
             'type': self.type,
             'data': self.data
         }
-
-#    def __repr__(self):
-#        return json.dumps({
-#            "type": self.type,
-#            "data": self.data
-#        }, ensure_ascii=False)
 
 class Dictionary:
     def __init__(self, user: dict):
@@ -109,20 +87,7 @@ class Dictionary:
             'user_id': self.user_id,
             'avater': self.avater
         }
-        
-#    def __repr__(self):
-#        return json.dumps({
-#            "age": self.age,
-#            "area": self.area,
-#            "card": self.card,
-#            "level": self.level,
-#            "nickname": self.nickname,
-#            "role": self.role,
-#            "sex": self.sex,
-#            "title": self.title,
-#            "user_id": self.user_id,
-#            "avater": self.avater
-#        }, ensure_ascii=False)
+       
 
 class GsCoreAdapter(PluginBase):
     description = "GsCoreAdapter"
@@ -338,8 +303,9 @@ class GsCoreAdapter(PluginBase):
         command = str(message["Content"]).strip().split(" ")
         if len(command) == 1 or command[0] != "早柚":  # 只是指令，但没请求内容
             return
-        if not message["FromWxid"] in self.groups:
+        if  message["IsGroup"] and not message["FromWxid"] in self.groups:
             return
+             
         try:
             user = await bot.get_contact(message["SenderWxid"])
             if not user:
