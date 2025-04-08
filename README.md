@@ -2,6 +2,8 @@
 根据XYBotV2开发的插件 用来对接早柚核心
 
 在安装之前请在XYBotV2运行环境安装库
+
+
 pip install markdown
 
 
