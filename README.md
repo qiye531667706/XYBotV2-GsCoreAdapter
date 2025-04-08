@@ -3,9 +3,17 @@
 
 在安装之前请在XYBotV2运行环境安装库
 pip install markdown
+
+
 pip install beautifulsoup4
+
+
 pip install lxml
+
+
 pip install websockets
+
+
 
 
 
